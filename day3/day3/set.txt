@@ -1,0 +1,85 @@
+set使用：
+s2 = set(['alex', 'eric', 'tony', 'alex'])
+
+s2.difference(['alex', 'eric'])
+	print(s2) 不变
+	集合操作有2种形式，修改原集合，或者生成新的集合
+	s3 = s2.difference(['alex', 'eric'])
+
+s2.difference_update
+	修改原集合
+	
+pop 从集合中拿一个元素
+	
+remove() 加参数，但是无返回值
+
+CMDB，采集资产
+
+old_dict = {
+	"#1":{"hostname": c1, 'cpu_count': 2, 'mem_capicit': 80},
+	"#2":{"hostname": c1, 'cpu_count': 2, 'mem_capicit': 80}
+	"#3":{"hostname": c1, 'cpu_count': 2, 'mem_capicit': 80}
+}
+
+# cmdb 新汇报的数据
+new_dict = {
+	"#1":{"hostname": c1, 'cpu_count': 2, 'mem_capicit': 70},
+	"#3":{"hostname": c1, 'cpu_count': 2, 'mem_capicit': 80}	
+	"#4":{"hostname": c1, 'cpu_count': 2, 'mem_capicit': 80}
+}
+
+1、原来没有          -->   新加入
+2、原来有            --> 更新
+3、新数据无，原来有  -->  删除
+
+三个列表：
+	1、要更新的数据  old_dict.difference(new_dict)
+	2、要插入的数据  old_dict.difference(new_dict)
+	3、要删除的数据  new_dict.difference(old_dict)
+
+交集、差集
+old_dict.keys()
+new_dict.keys()
+
+交集：
+	更新或不变(使用djoge更加简单)
+差集：
+	old差new  -->  删除
+	new差old  -->  新增
+
+old = set(old_dict.keys())
+new = set(new_dict.keys())
+
+update_set = old.intersection(new)            #要更新的集合
+delete_set = old.symmetric_difference(new)    #要删除的集合
+add_set = new.symmetric_difference(old)       #要添加的集合
+
+# 差集
+delete_set = old.difference(update_set)    
+add_set = new.difference(update_set) 
+
+for item in old:
+	if item in update_set:
+		del "old.item"
+
+
+# 对称差
+delete_set = old.symmetric_difference(update_set)    
+add_set = new.symmetric_difference(update_set) 
+
+	s1 = set([11,22,33])
+	s2 = set([22,44])
+
+	ret1 = s1.difference(s2)
+	ret2 = s1.symmetric_difference(s2)  #把s1对比了s2，也把s2对比了s1，取出2次过程中的结果
+
+	print(ret1)
+	print(ret2)
+
+# 差集
+delete_set = old.difference(new)    
+add_set = new.difference(old) 
+
+
+
+

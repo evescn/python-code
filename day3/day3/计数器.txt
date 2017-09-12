@@ -1,0 +1,43 @@
+字典：无序
+
+counter是对字典的一直补充
+使用counter需要导入 collections 类
+
+dict  
+	items()  keys()  values()
+
+counter(dict)   集成于dict
+	items()  keys()  values()  #循环和字典一摸一样
+	"r" 3 
+	elements()  #把所有的元素拿到，并进行统计就是 elements
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
