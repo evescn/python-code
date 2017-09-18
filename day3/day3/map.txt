@@ -27,4 +27,27 @@ print(b)
 
 globals() 当前所有可用的变量
 
+range() 范围
+
+reversed() 翻转
+
+round()  四舍五入
+
+sorted()  排序
+
+super()  通过子类执行父类的方法
+
+dir()  返回左右的key
+
+vars()  返回字典，key-value
+
+zipped(x,y)  把x和y列表一一组合，形成新的列表
+
+x = [1,2,3]
+y =[4,5,6]
+
+zipped(x,y)
+
+[(1,4),(2,5),(3,6)]
+
 
