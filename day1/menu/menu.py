@@ -8,14 +8,39 @@
 import sys
 import yaml
 
+
 def myinput():
+    # 输出提示信息的函数
     print("输入q退出系统")
     print("输入b返回上一级菜单")
-    key = input("请输入对应的字母进入下级菜单：")
+    key = input("请输入对应的名称进入下级菜单：")
     return key
 
 
-def layers1(key):
+def mycity(key):
+    # 输出市级别信息的函数
+    print("-------------------------------------------------")
+    for i, m in enumerate(menu[str(key)], 1):
+        for item in m.keys():
+            print("    ", i, item)
+    key = myinput()
+    return key
+
+
+def mycounty(key1, key2):
+    # 输出县基本信息的函数
+    print("-------------------------------------------------")
+    for i, m in enumerate(menu[str(key1)], 1):
+        for item in m.keys():
+            if item == key2:
+                for i, item in enumerate(m[str(item)], 1):
+                    print("    ", i, item)
+    key = myinput()
+    return key
+
+
+def mymunici(key):
+    # 输出4个直辖市的函数
     print("-------------------------------------------------")
     for i, item in enumerate(menu[str(key)], 1):
         print("    ", i, item)
@@ -23,81 +48,75 @@ def layers1(key):
     return key
 
 
-def layers2(key1,key2):
+def mysar(key):
+    # 输出特别行政区的函数
     print("-------------------------------------------------")
-    for i, item in enumerate(menu[str(key)][str(key)], 1):
-        print("    ", i, item)
+    # for i, item in enumerate(menu[str(key)], 1):
+    i = 1
+    print("    ", i, menu[str(key)])
     key = myinput()
     return key
 
 
-def layersz(key):
-    print("-------------------------------------------------")
-    # print(key)
-    for i, item in enumerate(menu[str(key)], 1):
-        print("    ", i, item)
-    key = myinput()
-    return key
-
-
-def ifkey(key):
+def exitorcontinue(key):
+    # 判断用户键入的值，以便判断是否退出或返回上一级
     if key == 'q':
         sys.exit("感谢使用查询系统")
     elif key == 'b':
         return 0
 
 
-# menu = {
-#     "bj":{"hd", "cy", "da"},
-#     "sc":{"cd":["gx", "wh", "xd"], "zj":["fs", "xs", "zg"]},
-#     "ty": []
-# }
-
-f = open('pro.yaml', 'r', encoding = 'utf-8')
+# 导入yaml文件，并转换为字典格式
+f = open('pro.yaml', 'r', encoding='utf-8')
 menu = yaml.load(f)
-# print(type(menu))
-# print(menu)
-# print(menu['0'])
 
+# 定义直辖市列表，判断用户输入是否为直辖市
+municipalities = ['北京市', '上海市', '重庆市', '天津市', ]
 
-n = 1
-layers = 1
+# 定义特别行政区
+SAR = ['香港', '澳门', '台湾', '钓鱼岛', ]
 
-while layers != 0 and n < 4:
+# 定义在省级错误次数
+n = 3
+
+while True:
+    if n == 0:  # 3次输入不正确直接退出系统
+        sys.exit("感谢使用查询系统")
+
     print("-------------------------------------------------")
-    for i,item in enumerate(menu.keys(),1):
+    for i, item in enumerate(menu.keys(), 1):    # 列出整个省级菜单
         print("    ", i, item)
 
     key1 = myinput()
-    print(key1)
-    print('---------------------')
 
-    if key1 == 'q' or key1 == 'b' or n ==3:
+    if key1 == 'q' or key1 == 'b':    # 判断此次键入的值是否为q,b
         sys.exit("感谢使用查询系统")
 
-    if key1 not in menu.keys():
+    if key1 not in menu.keys():    # 判断此次键入的值是否在所有可选的省级菜单中
+        n -= 1
         print("-------------------------------------------------")
         print("你输入的省份不对，请重新输入")
-        print("你还有%s次机会，否则将直接退出系统" %(3-n))
-        n += 1
+        print("你还有%s次机会，否则将直接退出系统" %n)
         continue
 
     while True:
-        # key = int(key) - 1
-        if key1 == '北京市':
-            key2 = layersz(key1)
+        if key1 in municipalities:    # 判断是否属于直辖市
+            key2 = mymunici(key1)
 
-            if ifkey(key2) == 0:
+            if exitorcontinue(key2) == 0:
+                break
+        elif key1 in SAR:    # 判断是否属于特别行政区
+            key2 = mysar(key1)
+
+            if exitorcontinue(key2) == 0:
+                break
+        else:   # 不属于直辖市
+            key2 = mycity(key1)
+            if exitorcontinue(key2) == 0:
                 break
 
-        else:
-            key2 =layers1(key1)
+            while True:    # 查找第三级县菜单
+                key3 = mycounty(key1, key2)
 
-            if ifkey(key2) == 0:
-                break
-
-            while True:
-                key3 = layers2(key1,key2)
-
-                if ifkey(key3 ) == 0:
+                if exitorcontinue(key3) == 0:
                     break
