@@ -1,27 +1,32 @@
 def login(func):
-    def inner(arg):
+    def inner(*args, **kwargs):
         print("passed user bingo")
-        func(arg)
+        return func(*args, **kwargs)
     return inner
-    #return func
+    # return func
 
-def home(name):
-    print("Welcome %s to home page!" %name)
+
+@login
+def home():
+    print("Welcome to home page!")
+
 
 @login
 def tv(name):
-    print("Welcome to tv page!")
+    print("Welcome %s to tv page!" %name)
+    return "gmkk"
 
 def movie(name):
     print("Welcome %s to movie page" %name)
 
+
 @login
-def child(name):
-    print("Welcome %s to child page" %name)
+def child(name, age):
+    print("Welcome %s %s to child page" %(name, age))
 
 # tv = login(tv)
 # tv()
-tv("evescn")
+# tv("evescn")
 
 
 # movie = login(movie)
@@ -29,3 +34,8 @@ tv("evescn")
 # home("evescn")
 #
 # child("evescn")
+
+home()
+t = tv("evescn")
+print(t)
+child("evescn", 15)

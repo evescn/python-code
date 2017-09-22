@@ -6,7 +6,8 @@
 # evescn
 
 import sys
-
+from prettytable import PrettyTable
+import yaml
 
 def login():
     # 验证用户帐号和密码
@@ -49,37 +50,105 @@ def login():
 def show_goods():
     # 显示当前商店内的所有商品
     commodity = "commodity.txt"
-    i = 1
+    x = PrettyTable(["商品名称", "价格", "数量"])
+    x.align["商品名称"] = "l"  # 以name字段左对齐
+    x.align["价格"] = "r"  # 以name字段右对齐
+    x.align["数量"] = "r"  # 以name字段右对齐
+    x.padding_width = 1  # 填充宽度
     with open(commodity, "r", encoding='utf-8') as f:
         for line in f:
             name, money, number = line.split()
-            if i == 1:
-                print("************************************")
-            print("%-15s%-15s%-15s" %(name, money, number))
-            if i == 1:
-                print("************************************")
-                i -= 1
+            x.add_row([name, money, number])
+
+        print(x)
+
 
 
 def recharge():
-    pass
+    # 充值函数
+    name = input("请输入充值帐号：")
+    money = input("请输入充值金额:")
+    # money_dict = {}
+    with open("money.yaml", "r", encoding='utf-8') as f:
+        money_dict = yaml.load(f)
+
+        money_dict[str(name)] = int(money_dict[str(name)]) + int(money)
+        print(money_dict)
+
+    with open("money.yaml", "wt", encoding='utf-8') as f:
+        f.write(yaml.dump(money_dict))
 
 
 def add_goods_shopping_cart():
+    # 添加商品到购物车函数
     pass
 
 
 def show_shopping_cart():
-    pass
-
+    # 显示购物车商品函数
+    # pass
+    open_shop_cart()
 
 def show_bought_goods():
+    # 显示已购买商品函数
     pass
 
 
 def remove_goods_from_bought():
+    # 从商品中移除已购买的
     pass
 
+
+def show_info():
+    print("*****************************")
+    print("查看购物车，请输入S：")
+    print("充值，请输入M：")
+    print("查看商品数量和价格，请输入G：")
+    print("添加商品到购物车，请输入商品名称：")
+    print("购买商品，请输入B：")
+    print("*****************************")
+    return input("请输入你的选择：")
+
+
+def open_password():
+    pass
+
+def open_shop_cart():
+    x = PrettyTable(["商品名称", "价格", "数量"])
+    x.align["商品名称"] = "l"  # 以name字段左对齐
+    x.align["价格"] = "r"  # 以name字段右对齐
+    x.align["数量"] = "r"  # 以name字段右对齐
+    x.padding_width = 1  # 填充宽度
+    with open("shop-cart.txt", "r", encoding='utf-8') as f:
+        for line in f:
+            name, money, number = line.split()
+            x.add_row([name, money, number])
+        print(x)
+
+
+def open_commodity():
+    x = PrettyTable(["商品名称", "价格", "数量"])
+    x.align["商品名称"] = "l"  # 以name字段左对齐
+    x.align["价格"] = "r"  # 以name字段右对齐
+    x.align["数量"] = "r"  # 以name字段右对齐
+    x.padding_width = 1  # 填充宽度
+    with open("commodity.txt", "r", encoding='utf-8') as f:
+        for line in f:
+            name, money, number = line.split()
+            x.add_row([name, money, number])
+        print(x)
+
+
+def open_money(name, money):
+    money_sum = money
+    with open("money.yaml", "r", encoding='utf-8') as f:
+        for line in f:
+            name_money, money_money = line.split()
+            if name == name_money:
+                money_sum = money_money + money
+
+    # if money_sum != money:
+        # with open
 
 def main():
     # 验证用户帐号和密码
@@ -87,6 +156,24 @@ def main():
 
     # 显示当前商店内的所有商品
     show_goods()
+
+    while True:
+        # 输出显示信息
+        key = show_info()
+        print("*****************************")
+        if key.lower() == 's':
+            show_shopping_cart()
+        elif key.lower() == 'm':
+            recharge()
+        elif key.lower() == 'b':
+            add_goods_shopping_cart()
+        elif key.lower() == 'g':
+            show_goods()
+        else:
+            add_goods_shopping_cart()
+
+
+
 
 
 
