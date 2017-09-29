@@ -1,6 +1,5 @@
 def before1(*request, **kargs):
     print("Before")
-    # return 33
 
 
 def after1(*request, **kargs):

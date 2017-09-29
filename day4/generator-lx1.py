@@ -8,8 +8,13 @@ def cash_money(amount):
 
 atm = cash_money(500)
 print(type(atm))
-print(next(atm))
-print(next(atm))
-print(next(atm))
-print(next(atm))
-print(next(atm))
+print("取走了", next(atm))
+print("取走了", next(atm))
+print("取走了", next(atm))
+print("取走了", next(atm))
+print("取走了", next(atm))
+
+g = (x * x for x in range(10))
+
+for i in g:
+    print(i)
