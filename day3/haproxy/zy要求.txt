@@ -1,0 +1,64 @@
+1、用户输入字符串
+{"backend": "test.oldboy.org","record":{"server": "100.1.7.9","weight": 20,"maxconn": 30}}
+    
+
+2、把用户的字符串转换为字典
+
+
+3、在对应的backend下，添加一条新记录 <backend不存在时，创建，backend没有值是，删除>
+
+
+4、删除一条记录
+
+
+5、修改一条记录
+
+
+
+————————————————————————————————————
+1、ha.py
+global       
+        log 127.0.0.1 local2
+        daemon
+        maxconn 256
+        log 127.0.0.1 local2 info
+defaults
+        log global
+        mode http
+        timeout connect 5000ms
+        timeout client 50000ms
+        timeout server 50000ms
+        option  dontlognull
+
+listen stats :8888
+        stats enable
+        stats uri       /admin
+        stats auth      admin:1234
+
+frontend oldboy.org
+        bind 0.0.0.0:80
+        option httplog
+        option httpclose
+        option  forwardfor
+        log global
+        acl www hdr_reg(host) -i www.oldboy.org
+        use_backend www.oldboy.org if www
+
+backend www.oldboy.org
+        server 100.1.7.9 100.1.7.9 weight 20 maxconn 3000
+
+backend buy.oldboy.org
+        server 100.1.7.90 100.1.7.90 weight 20 maxconn 3000
+
+2、写程序
+	登陆功能
+	用户输入：{"backend": "test.oldboy.org","record":{"server": "100.1.7.9","weight": 20,"maxconn": 30}}
+	
+	字符串格式化：
+		backend test.oldboy.org
+		server 100.1.7.9 weight 20 maxconn 30
+		
+		
+		
+		
+		
