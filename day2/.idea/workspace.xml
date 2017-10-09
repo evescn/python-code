@@ -22,7 +22,10 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/day2$shopping_cart.coverage" NAME="shopping-cart Coverage Results" MODIFIED="1506758638719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/shopping-cart" />
+<<<<<<< HEAD
     <SUITE FILE_PATH="coverage/day2$haproxy.coverage" NAME="haproxy Coverage Results" MODIFIED="1507541237886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../day3/haproxy" />
+=======
+>>>>>>> origin/master
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
@@ -30,16 +33,26 @@
       <file leaf-file-name="shopping-cart.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shopping-cart/shopping-cart.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="192">
               <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="9" />
               <folding>
+=======
+            <state relative-caret-position="139">
+              <caret line="125" column="0" lean-forward="false" selection-start-line="125" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+              <folding>
+                <element signature="e#100#110#0" expanded="true" />
+>>>>>>> origin/master
                 <element signature="e#188#1220#0" expanded="false" />
                 <element signature="e#1245#1667#0" expanded="false" />
                 <element signature="e#1700#1732#0" expanded="false" />
                 <element signature="e#1764#1793#0" expanded="false" />
                 <element signature="e#1824#2202#0" expanded="false" />
+<<<<<<< HEAD
                 <element signature="e#2226#2557#0" expanded="false" />
                 <element signature="e#2588#2724#0" expanded="false" />
+=======
+>>>>>>> origin/master
                 <element signature="e#2765#3071#0" expanded="false" />
                 <element signature="e#3106#4441#0" expanded="false" />
                 <element signature="e#4477#5473#0" expanded="false" />
@@ -55,6 +68,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="haproxy.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../day3/haproxy/haproxy.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -67,6 +81,24 @@
                 <element signature="e#4147#5715#0" expanded="false" />
                 <element signature="e#5751#6050#0" expanded="false" />
               </folding>
+=======
+      <file leaf-file-name="bought.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/shopping-cart/bought.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="shop-cart.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shopping-cart/shop-cart.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="5" />
+              <folding />
+>>>>>>> origin/master
             </state>
           </provider>
         </entry>
@@ -74,8 +106,22 @@
       <file leaf-file-name="password.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../day3/haproxy/password.txt">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="24">
+              <caret line="1" column="17" lean-forward="true" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="money.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shopping-cart/money.txt">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
+<<<<<<< HEAD
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="8" />
+>>>>>>> origin/master
               <folding />
             </state>
           </provider>
@@ -85,7 +131,7 @@
         <entry file="file://$PROJECT_DIR$/../day3/haproxy/lock.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -136,6 +182,22 @@
     <option name="height" value="829" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <flattenPackages />
@@ -383,19 +445,32 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="-13" y="109" width="1296" height="829" extended-state="0" />
     <editor active="true" />
+=======
+    <frame x="-8" y="-8" width="1296" height="1006" extended-state="7" />
+>>>>>>> origin/master
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33379695" sideWeight="0.35625" order="7" side_tool="true" content_ui="tabs" />
+=======
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20847268" sideWeight="0.35234374" order="7" side_tool="true" content_ui="tabs" />
+>>>>>>> origin/master
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33379695" sideWeight="0.64375" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32329988" sideWeight="0.64765626" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> origin/master
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -417,7 +492,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+<<<<<<< HEAD
       <option name="time" value="28" />
+=======
+      <option name="time" value="26" />
+>>>>>>> origin/master
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -427,13 +506,20 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+<<<<<<< HEAD
+=======
+            <element signature="e#100#110#0" expanded="true" />
+>>>>>>> origin/master
             <element signature="e#188#1220#0" expanded="false" />
             <element signature="e#1245#1667#0" expanded="false" />
             <element signature="e#1700#1732#0" expanded="false" />
             <element signature="e#1764#1793#0" expanded="false" />
             <element signature="e#1824#2202#0" expanded="false" />
+<<<<<<< HEAD
             <element signature="e#2226#2557#0" expanded="false" />
             <element signature="e#2588#2724#0" expanded="false" />
+=======
+>>>>>>> origin/master
             <element signature="e#2765#3071#0" expanded="false" />
             <element signature="e#3106#4441#0" expanded="false" />
             <element signature="e#4477#5473#0" expanded="false" />
@@ -445,6 +531,7 @@
             <element signature="e#7086#8588#0" expanded="false" />
             <element signature="e#7164#7870#0" expanded="false" />
           </folding>
+<<<<<<< HEAD
         </state>
       </provider>
     </entry>
@@ -461,6 +548,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="5" />
           <folding />
+=======
+>>>>>>> origin/master
         </state>
       </provider>
     </entry>
@@ -530,24 +619,39 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/shopping-cart/tmp.txt" />
     <entry file="file://$PROJECT_DIR$/shopping-cart/money.yaml" />
     <entry file="file://$PROJECT_DIR$/shopping-cart/password.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="10" />
+=======
+    <entry file="file://$PROJECT_DIR$/shopping-cart/tmp.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/shopping-cart/commodity.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
           <caret line="1" column="17" lean-forward="true" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+=======
+    <entry file="file://$PROJECT_DIR$/shopping-cart/money.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" column="4" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/shopping-cart/money.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -584,30 +688,53 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/shopping-cart/password.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="10" />
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/../day3/haproxy/tmp.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-425">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/shopping-cart/commodity.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" column="17" lean-forward="true" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/shopping-cart/shopping-cart.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="192">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="9" />
           <folding>
+=======
+        <state relative-caret-position="139">
+          <caret line="125" column="0" lean-forward="false" selection-start-line="125" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+          <folding>
+            <element signature="e#100#110#0" expanded="true" />
+>>>>>>> origin/master
             <element signature="e#188#1220#0" expanded="false" />
             <element signature="e#1245#1667#0" expanded="false" />
             <element signature="e#1700#1732#0" expanded="false" />
             <element signature="e#1764#1793#0" expanded="false" />
             <element signature="e#1824#2202#0" expanded="false" />
+<<<<<<< HEAD
             <element signature="e#2226#2557#0" expanded="false" />
             <element signature="e#2588#2724#0" expanded="false" />
+=======
+>>>>>>> origin/master
             <element signature="e#2765#3071#0" expanded="false" />
             <element signature="e#3106#4441#0" expanded="false" />
             <element signature="e#4477#5473#0" expanded="false" />
@@ -622,18 +749,40 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/../day3/haproxy/lock.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/shopping-cart/money.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="8" />
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/../day3/haproxy/haproxy.cfg">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
           <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/shopping-cart/shop-cart.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shopping-cart/bought.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="5" />
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>
