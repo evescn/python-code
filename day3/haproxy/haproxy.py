@@ -93,18 +93,22 @@ def additions():
                 text = line.split()
                 if sign == 1:
                     # 判断该记录是否已存在
-                    if str(backend_record['server']) == str(text[1]):
-                        print("该IP记录已存在，请重新确认信息")
-                        return
-                    elif not text:
+                    if not text:
                         sign = 2
+                        continue
                     elif "backend" in text:
                         sign = 2
+                    elif str(backend_record['server']) == str(text[1]):
+                        print("该IP记录已存在，请重新确认信息")
+                        return
                 elif sign == 2:
                     # 若该记录不存在则添加该记录
                     text = '        server %s %s weight %s maxconn %s' % (backend_record['server'], backend_record['server'], backend_record['weight'], backend_record['maxconn'])
                     dat_out = "".join(text)
                     f2.write(dat_out + "\n")
+                    f2.write("\n")
+                    print("新增记录成功")
+                    sign = 3
 
                 if "backend" in text:
                     # 找到修改配置的位置
@@ -127,6 +131,7 @@ def additions():
                 text = '        server %s %s weight %s maxconn %s' % (backend_record['server'], backend_record['server'], backend_record['weight'], backend_record['maxconn'])
                 dat_out = "".join(text)
                 f2.write(dat_out + "\n")
+                print("新增记录成功")
 
     move_filename("haproxy.cfg")
 
@@ -148,7 +153,7 @@ def deletions():
                     elif "backend" in text:
                         sign = 0
                     elif str(backend_record['server']) == str(text[1]) and str(backend_record['weight']) == str(text[4]) and str(backend_record['maxconn']) == str(text[6]):
-                        print("ok")
+                        print("删除成功")
                         continue
                 if "backend" in text:
                     if text[1] == str(backend_title):
@@ -159,17 +164,28 @@ def deletions():
                 else:
                     dat_out = "".join(line)
                     f2.write(dat_out)
+    move_filename("haproxy.cfg")
 
-            # if sign == 0:
-            #     title = "%s %s" % ("backend", backend_title)
-            #     dat_out = "".join(title)
-            #     f2.write(dat_out + "\n")
-            #
-            #     text = '        server %s %s weight %s maxconn %s' % (
-            #     backend_record['server'], backend_record['server'], backend_record['weight'], backend_record['maxconn'])
-            #     dat_out = "".join(text)
-            #     f2.write(dat_out + "\n")
-
+    with open("haproxy.cfg", "r") as f1:
+        with open("tmp.txt", "w") as f2:
+            for line in f1:
+                text = line.split()
+                if sign == 1:
+                    if not text:
+                        sign = 0
+                    elif "backend" in text:
+                        sign = 0
+                if "backend" in text:
+                    if text[1] == str(backend_title):
+                        if not text:
+                            continue
+                        sign = 1
+                    else:
+                        dat_out = "".join(line)
+                        f2.write(dat_out)
+                else:
+                    dat_out = "".join(line)
+                    f2.write(dat_out)
     move_filename("haproxy.cfg")
 
 
