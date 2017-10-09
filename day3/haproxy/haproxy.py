@@ -98,10 +98,15 @@ def additions():
                         continue
                     elif "backend" in text:
                         sign = 2
+                        continue
                     elif str(backend_record['server']) == str(text[1]):
                         print("该IP记录已存在，请重新确认信息")
                         return
-                elif sign == 2:
+                    else:
+                        print("test")
+                        sign = 2
+
+                if sign == 2:
                     # 若该记录不存在则添加该记录
                     text = '        server %s %s weight %s maxconn %s' % (backend_record['server'], backend_record['server'], backend_record['weight'], backend_record['maxconn'])
                     dat_out = "".join(text)
@@ -124,6 +129,7 @@ def additions():
                     f2.write(dat_out)
 
             if sign == 0:
+                f2.write("\n")
                 title = "%s %s" % ("backend", backend_title)
                 dat_out = "".join(title)
                 f2.write(dat_out + "\n")
@@ -131,6 +137,7 @@ def additions():
                 text = '        server %s %s weight %s maxconn %s' % (backend_record['server'], backend_record['server'], backend_record['weight'], backend_record['maxconn'])
                 dat_out = "".join(text)
                 f2.write(dat_out + "\n")
+                f2.write("\n")
                 print("新增记录成功")
 
     move_filename("haproxy.cfg")
