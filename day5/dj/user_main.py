@@ -9,7 +9,7 @@
 @time: 2017/10/11 22:48
 """
 
-import sys
+# import sys
 # print(sys.path)
 from backend.logic import handle
 handle.home()
