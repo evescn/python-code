@@ -6,6 +6,14 @@
 # @File    : sql_api.py
 # @Software: PyCharm
 
+import sys
+import os
+base_dir = os.path.abspath(__file__)
+for i in range(3):
+    base_dir = os.path.dirname(base_dir)
+
+sys.path.append(base_dir)
+
 from config import settings
 
 
