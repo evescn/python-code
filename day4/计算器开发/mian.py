@@ -14,21 +14,17 @@ def chengorchu(ret1, ret2):
     for i in range(len(ret2)):
         if ret2[i] == '*':
             if flag:
-                ret = int(ret1[0]) * int(ret1[1])
+                ret = float(ret1[0]) * float(ret1[1])
                 flag = False
             else:
-                    # ret = int(ret) * int(ret1[i])
-                ret *= int(ret1[i+1])
+                ret *= float(ret1[i+1])
         else:
             if flag:
-                ret = int(ret1[0]) / int(ret1[1])
+                ret = float(ret1[0]) / float(ret1[1])
                 flag = False
             else:
-                # ret = int(ret) * int(ret1[i])
-                # print(ret)
-                ret = ret / int(ret1[i+1])
-    # print("ret=%d" %ret)
-    return str(ret)
+                ret = ret / float(ret1[i+1])
+    return float(ret)
 
 
 def jiaorjian(ret1, ret2):
@@ -36,18 +32,18 @@ def jiaorjian(ret1, ret2):
     for i in range(len(ret2)):
         if ret2[i] == '+':
             if flag:
-                ret = int(ret1[0]) + int(ret1[1])
+                ret = float(ret1[0]) + float(ret1[1])
                 flag = False
             else:
-                ret += int(ret1[i+1])
+                ret += float(ret1[i+1])
         else:
             if flag:
-                ret = int(ret1[0]) - int(ret1[1])
+                ret = float(ret1[0]) - float(ret1[1])
                 flag = False
             else:
-                ret = ret - int(ret1[i+1])
-    # print("ret=%d" %ret)
-    return str(ret)
+                ret = ret - float(ret1[i+1])
+    print("ret=%d" %ret)
+    return float(ret)
 
 
 def delstring():
@@ -78,56 +74,69 @@ def stringex(string, a):
 
 def main():
     # 输入字符串
-    a = '1 - 2 * ( (60-30 +(-40/5) * (9-2*5/3 + 7 /3*99/4*2998 +10 * 568/14 )) - (-4*3)/ (16-3*2) )'
+    a = '1 - 2 * ( (6-3 +(-5/5) * (9-2*3/3 + 7/3*7/4*12 +10 * 5/5 )) - (-4*3)/ (12-3*2) )'
+    # a = '+(-40/5+3*12)'
     a = a.replace(" ", "")   #去空格
-    # while True:
-
-    # 最内行括号
-    b = re.findall('\([^\(\)]+\)', a)
-    for i in range(len(b)):
-        print("1 ", b[i])
-        if "+" in b[i] or "-" in b[i]:
-            # print("AOK")
-            if "*" in b[i] or "/" in b[i]:
-                sz = []
-                c = re.findall("[^\(\)]+", b[i])
-                print("2 %s" %c)
-                for i in range(len(c)):
-                    ret1 = re.split("\-|\+", c[i])
-                    ret2 = re.findall("\-|\+", c[i])
-                    # print("ret %s" %ret)
+    x=3
+    while x:
+        # 最内行括号
+        b = re.findall('\([^\(\)]+\)', a)
+        print(b)
+        for i in range(len(b)):
+            print("1 ", b[i])
+            if "+" in b[i] or "-" in b[i]:
+                if "*" in b[i] or "/" in b[i]:
+                    sz = []
+                    c = re.findall("[^\(\)]+", b[i])
+                    print("2 %s" %c)
+                    ret1 = re.split("\-|\+", c[0])
+                    ret2 = re.findall("\-|\+", c[0])
                     print(ret1)
                     print(ret2)
-                    for i in ret1:
-                        print(i)
-                        if i == "":
+                    for j in ret1:
+                        if j == "":
                             continue
-                        # elif i != :
-                        #     sz.append(i)
                         else:
-                            ret3 = re.split("\*|\/", i)
-                            ret4 = re.findall("[\*\/]", i)
+                            ret3 = re.split("\*|\/", j)
+                            ret4 = re.findall("[\*\/]", j)
                             if ret4:
                                 value = chengorchu(ret3, ret4)
                                 print("value=%s" % value)
                                 sz.append(value)
                                 print("3", sz)
-                                # a = a.replace(i, value)
-                                # print(a)
-                else:
-                    if len(sz)  > len(ret2):
-                        value = jiaorjian(sz, ret2)
-                        a = a.replace(c[i], value)
+                            else:
+                                print()
+                                sz.append(float(j))
                     else:
-                        # a = a.replace(c[i], int(sz[0]))
-                        print("4 ", a)
-            else:
-                c = re.findall("[^\(\)]+", b[i])
-                for i in range(len(c)):
-                    ret1 = re.split("\-|\+", b[i])
-                # print("ret1", ret1)
-        else:
-            pass
+                        if len(sz) > len(ret2):
+                            print("sz>2")
+                            value = jiaorjian(sz, ret2)
+                            a = a.replace(b[i], str(value))
+                            print("4", a)
+                        else:
+                            if len(ret2) > 1:
+                                ret5 = ret2[1:]
+                                print(ret5)
+                                value = jiaorjian(sz, ret5)
+                            if ret2[0] == "-":
+                                sz[0] = -sz[0]
+                                if len(ret2) > 1:
+                                    ret5 = ret2[1:]
+                                    value = jiaorjian(sz, ret5)
+                                    print(value)
+                                else:
+                                    value = sz[0]
+                            a = a.replace(b[i], str(value))
+                            print(a)
+                            a = a.replace("+-", "-")
+                            a = a.replace("--", "+")
+                            print("4gm", a)
+                # else:
+                #     c = re.findall("[^\(\)]+", b[i])
+                #     for i in range(len(c)):
+                #         ret1 = re.split("\-|\+", b[i])
+                #     # print("ret1", ret1)
+        x-=1
 
 
 if __name__ == '__main__':
