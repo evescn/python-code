@@ -77,11 +77,13 @@ def main():
     a = '1 - 2 * ( (6-3 +(-5/5) * (9-2*3/3 + 7/3*7/4*12 +10 * 5/5 )) - (-4*3)/ (12-3*2) )'
     # a = '+(-40/5+3*12)'
     a = a.replace(" ", "")   #去空格
+    xx = re.search(r'\([^()]+\)', a)
+    print("xx ", xx.group())
     x=3
     while x:
         # 最内行括号
         b = re.findall('\([^\(\)]+\)', a)
-        print(b)
+        print("b",b)
         for i in range(len(b)):
             print("1 ", b[i])
             if "+" in b[i] or "-" in b[i]:

@@ -9,9 +9,12 @@ data = [10,4,33,21,54,3,8,11,5,22,2,1,17,13,6]
 
 l = len(data)
 print(l)
-for i in range(l-1):
-    for j in range(i+1, l):
-        if data[i] > data[j]:
-            data[i], data[j] = data[j], data[i]
+for i in range(l):
+    for j in range(l-1-i):
+        if data[j] > data[j+1]:
+            tmp = data[j]
+            data[j] = data[j+1]
+            data[j+1] = tmp
+            # data[i], data[j] = data[j], data[i]
     print(data)
 print(data)

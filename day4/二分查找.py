@@ -6,11 +6,11 @@ def binary_search(data_source, find_n):
     if mid >= 1:
         if data_source[mid] > find_n: # data in left
             print("data in left of [%s]" % data_source[mid])
-            # print(data_source[:mid])
+            print(data_source[:mid])
             binary_search(data_source[:mid], find_n)
         elif data_source[mid] < find_n: # data in right
             print("data in right of [%s]" % data_source[mid])
-            # print(data_source[mid:])
+            print(data_source[mid:])
             binary_search(data_source[mid:], find_n)
         elif data_source[mid] == find_n:
             print("found %s" % data_source[mid])
@@ -21,6 +21,6 @@ def binary_search(data_source, find_n):
 
 
 if __name__ == '__main__':
-    data = list(range(1,6000000,3))
-    # print(data)
-    binary_search(data, 1)
+    data = list(range(1,100,3))
+    ret = input("请输入猜测的数字：")
+    binary_search(data, int(ret))
