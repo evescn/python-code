@@ -8,6 +8,17 @@ import re
 # if m:
 #     print(m.group())
 #
+# ip_addr = "inet 172.19.133.212 brd 172.19.143.255"
+#
+# m = re.search("(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}", ip_addr)
+
+# m = re.search("
+
+# print(m.group())
+#
+# if m:
+#     print(m.group())
+#
 # string2 = "evescn"
 # string3 = "Evescn"
 #
@@ -24,9 +35,20 @@ import re
 # if m:
 #     print(m.group())
 
-contactInfo = 'Oldboy School, Beijing Changping Shahe: 010-8343245'
-match = re.search(r'(\w+), (\w+): (\S+)', contactInfo)
-#分组   r按原生字符处理比如.
-print(match.group(1))
-print(match.group(2))
-print(match.group(3))
+# contactInfo = 'Evescn, ChengDu: 028-8888888'
+# match = re.search(r'(\w+), (\w+): (\S+)', contactInfo)
+# #分组   r按原生字符处理比如.
+# print(match.group(1))
+# print(match.group(2))
+# print(match.group(3))
+
+# match = re.search(r'(?P<name>\w+), (?P<addr>\w+): (?P<phone>\S+)', contactInfo)
+#
+# print(match.group('name'))
+# print(match.group('addr'))
+# print(match.group('phone'))
+
+email = "evescn.gmkk@163.com   http://blog.evescn.com"
+
+m = re.search(r"[0-9.a-z]{0,26}@[0-9.a-z]{0,20}.[0-9a-z]{0,8}", email)
+print(m.group())
