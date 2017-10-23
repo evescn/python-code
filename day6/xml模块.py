@@ -16,7 +16,7 @@ print(root.tag)
 for child in root:
     print(child.tag, child.attrib)
     for i in child:
-        print(i.tag, i.text)
+        print("--->", i.tag, i.text)
 
 # 只遍历year 节点
 for node in root.iter("year"):

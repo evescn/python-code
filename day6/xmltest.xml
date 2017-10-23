@@ -1,7 +1,7 @@
 <data>
     <country name="Liechtenstein">
         <rank updated="yes">2</rank>
-        <year updated="yes">2010</year>
+        <year updated="yes">2009</year>
         <gdppc>141100</gdppc>
         <neighbor direction="E" name="Austria" />
         <neighbor direction="W" name="Switzerland" />

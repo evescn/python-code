@@ -23,4 +23,17 @@ name = ["evescn", "gmkk", "hlr"]
 d["test"] = name  # 持久化列表
 d["t1"] = t  # 持久化类
 d["t2"] = t2
+
 d.close()
+
+a = shelve.open("shelve_test")   # 文件名称
+
+# print(dir(a))
+print(a.get("test"))
+
+b = a.get("t1")
+c = a.get("t2")
+
+print(a.get("t2"))
+print(b.n)
+print(c.n)
