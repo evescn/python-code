@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 2017/10/19 21:32
+# @Time    : 2017/10/23 16:35
 # @Author  : Evescn
 # @Site    : 
-# @File    : random.py
+# @File    : configparser-lx1.py
 # @Software: PyCharm
