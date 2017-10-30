@@ -1,0 +1,8 @@
+2017-10-30 22:44:10,944 - Eevescn-Test - INFO - info message
+2017-10-30 22:44:10,944 - Eevescn-Test - WARNING - warn message
+2017-10-30 22:44:10,945 - Eevescn-Test - ERROR - error message
+2017-10-30 22:44:10,945 - Eevescn-Test - CRITICAL - critical message
+2017-10-30 22:44:36,327 - GMKK - INFO - info message
+2017-10-30 22:44:36,327 - GMKK - WARNING - warn message
+2017-10-30 22:44:36,327 - GMKK - ERROR - error message
+2017-10-30 22:44:36,327 - GMKK - CRITICAL - critical message

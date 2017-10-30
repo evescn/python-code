@@ -1,0 +1,16 @@
+INFO:root:So should this
+WARNING:root:And this, too
+INFO:root:So should this
+WARNING:root:And this, too
+2017-30-10  09:28:30 PM So should this
+2017-30-10  09:28:30 PM And this, too
+2017-30-10  09:28:49 PM: So should this
+2017-30-10  09:28:49 PM: And this, too
+2017-10-30 22:35:22,216: 2
+2017-10-30 22:35:22,217: 3
+2017-30-10 10:36:32: 2
+2017-30-10 10:36:32: 3
+2017-30-10 10:36:46 2
+2017-30-10 10:36:46 3
+2017-30-10 10:36:56 : 2
+2017-30-10 10:36:56 : 3
