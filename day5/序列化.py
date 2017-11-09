@@ -22,7 +22,7 @@ info = {
 
 # print(pickle.dumps(info))
 # f.write(pickle.dumps(info))
-pickle.dump(info,f)
+pickle.dump(info, f)
 f.close()
 
 # import json
