@@ -9,7 +9,8 @@
 class Animal(object):
     def __init__(self, name):  # Constructor of the class
         self.name = name
-        self.num = None
+        # self.num = None
+        self.__num = None   # 私有变量
 
     @classmethod   # 类方法，不能访问实例变量
     def talk(self):  # Abstract method, defined by convention only
@@ -23,19 +24,19 @@ class Animal(object):
     @property     # 把方法变成属性
     def habit(self):
         # self.num = num
-        # print("%s habit shuijiao" %self.name)
-        return self.num
+        # print("%s habit shuijiao" %self.__num)
+        return self.__num
 
     @habit.setter     # 把方法变成属性，并且可以赋值
     def habit(self, num):
-        self.num = num
-        print("%s habit shuijiao" %self.num)
+        self.__num = num
+        print("%s habit shuijiao" %self.__num)
 
     @habit.deleter     # 把方法变成属性，并且可以赋值
     def habit(self):
         # self.num = num
         print("del habit shuijiao")
-        del self.num
+        del self.__num
 
     hobbie = "meat"
 
@@ -50,9 +51,13 @@ d = Animal("evescn")
 # d.habit()
 print(d.habit)
 d.habit = 3
-del d.habit
-d.habit = 3
+d.__num = 6
+print("OUT:", d.__num)
+print("OUT:", d._Animal__num)   # 特例访问私有变量
+# del d.habit
+# d.habit = 3
 print(d.habit)
+# print(d.num)
 
 
 # class Cat(Animal):
