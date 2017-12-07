@@ -29,9 +29,14 @@ class C(A):
 # 经典类继承是深度优先，新式类继承是广度优先
 
 class D(B,C):    # 继承遵循广度有优先，先继承B的方法，B没有的方法才去继承C的方法，最后才去继承A的方法
+    # Test class
+    '''Test2 class'''
     pass
 
 
 d = D()
 d.f1()
 d.f2()
+
+print(d.__doc__)   # 输出类注释
+print(d.__module__)   # 输出类注释
