@@ -20,15 +20,23 @@ while True:
     client_data = conn.recv(1024)
     print(str(client_data,'utf8'))
     conn.sendall(bytes('不要回答，不要回答，不要回答','utf8'))
+
     while True:
-        try:
-            client_data = conn.recv(1024)
-            print(str(client_data, 'utf8'))
-        except Exception:
-            print("client closed , break")
-            break
-        # server_response = input(">>:".strip())
-        # conn.sendall(bytes(server_response, 'utf8'))
-        if not client_data: break
+        client_data = conn.recv(1024)
+        if not client_data.decode(): break
+        print(str(client_data, 'utf8'))
         conn.send(client_data)
+
+    # while True:
+    #     try:
+    #         client_data = conn.recv(1024)
+    #         print(str(client_data, 'utf8'))
+    #     except Exception:
+    #         print("client closed , break")
+    #         break
+    #     # server_response = input(">>:".strip())
+    #     # conn.sendall(bytes(server_response, 'utf8'))
+    #     if not client_data: break
+    #     conn.send(client_data)
+
     conn.close()
