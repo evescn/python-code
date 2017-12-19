@@ -8,7 +8,8 @@
 
 import socket
 import subprocess
-ip_port = ('127.0.0.1',9999)
+
+ip_port = ('127.0.0.1', 9999)
 
 sk = socket.socket()
 sk.bind(ip_port)
