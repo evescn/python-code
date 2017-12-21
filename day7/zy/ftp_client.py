@@ -39,11 +39,11 @@ while True:
                 sk.send(bytes(cmd_result, 'utf8'))
                 print("cmd_result:", cmd_result)
                 server_ack_msg = sk.recv(100)
-                print("server_ack_msg:", server_ack_msg)
+                #print("server_ack_msg:", server_ack_msg)
                 cmd_res_msg = str(server_ack_msg.decode()).split("|")
                 while True:
                     # print("server responds:", server_ack_msg)
-                    print("cmd_res_msg:", cmd_res_msg[0])
+                    #print("cmd_res_msg:", cmd_res_msg[0])
                     if cmd_res_msg[0] == "CMD_RESULT_SIZE":
                         cmd_res_size = int(cmd_res_msg[1])
                         sk.send(b"start")
@@ -52,7 +52,7 @@ while True:
                 received_size = 0
                 while received_size < cmd_res_size:
                     server_reply = sk.recv(4096)
-                    print("server_reply：", server_reply)
+                    # print("server_reply：", server_reply)
                     # print(type(server_reply.decode('utf-8')))
                     # print("server_reply", str(server_reply, 'utf8'))
                     res += str(server_reply, 'utf8')
@@ -60,6 +60,31 @@ while True:
                 else:
                     print("res:", res)
                     # print(str(server_reply.decode()))
+                    print("------ reve doene -------")
+            else:
+                # user_input = input("cmd$ ").strip()
+                if len(cmd_result) == 0: continue
+                if cmd_result == 'q': break
+                sk.send(bytes(cmd_result, 'utf8'))
+                # while True:
+                # ack_msg = b"CMD_RESULT_SIZE|%s" %len(cmd_result)
+                server_ack_msg = sk.recv(100)
+                cmd_res_msg = str(server_ack_msg.decode()).split("|")
+                while True:
+                    # print("server responds:", server_ack_msg)
+                    # print("cmd_res_msg:", cmd_res_msg[0])
+                    if cmd_res_msg[0] == "CMD_RESULT_SIZE":
+                        cmd_res_size = int(cmd_res_msg[1])
+                        sk.send(b"start")
+                        break
+                res = ''
+                received_size = 0
+                while received_size < cmd_res_size:
+                    server_reply = sk.recv(500)
+                    res += str(server_reply, 'utf8')
+                    received_size += len(server_reply)
+                else:
+                    print(res)
                     print("------ reve doene -------")
 
     else:

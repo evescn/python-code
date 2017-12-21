@@ -14,7 +14,8 @@ def login(username, passwd):
     print("这个是登录函数")
     with open("password.txt", 'r') as f:
         for line in f:
-            user_file, pass_file = line.split()
+            user_file, pass_file, homedir, disksize = line.split()
+            print("homedir:%s" % homedir)
             if user_file == username and pass_file == passwd:
                 print("Bingo!")
                 login_info = 1
@@ -22,6 +23,8 @@ def login(username, passwd):
         else:
             print("You name or password is error!")
             return 1
+    a = subprocess.Popen("cd homedir && pwd", shell=True, stdout=subprocess.PIPE)
+    print(a.stdout.read())
 
 
 def showinfo(key):
@@ -64,7 +67,7 @@ def cd():
 
 
 def commond(cmd):
-    cmd_call = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
+    cmd_call = subprocess.Popen(cmd, cwd="/home/evescn", shell=True, stdout=subprocess.PIPE)
     cmd_result = cmd_call.stdout.read()
     if len(cmd_result) == 0:
         cmd_result = b'commond is not found'

@@ -23,12 +23,13 @@ if __name__ == '__main__':
         while True:
             print("server is waiting...")
             client_data = conn.recv(1024)
+            print("recv cmd:", str(client_data, 'utf8'))
             if not client_data:
                 break
             print("recv cmd:", str(client_data, 'utf8'))
             # print(str(client_data, 'utf-8'))
             func_name = str(client_data, 'utf8')
-            if func_name == 'login':
+            if func_name == 'login':    # 调用登录函数进行用户身份判断
                 conn.send(client_data)
                 username = conn.recv(1024)
                 conn.send(username)
@@ -47,17 +48,27 @@ if __name__ == '__main__':
                 # print(type(result))
                 conn.send(bytes(result, 'utf8'))
                 # print("OK")
-            elif func_name == 'dir' or func_name == 'ls' or func_name == 'cd':
+            elif func_name == 'dir' or func_name == 'ls' or func_name == 'cd':  # 调用ls函数和cd函数
                 func = getattr(commons, func_name)  # commons.name 方法的内存地址
                 cmd_len, ack_msg, cmd_result = func()
                 # return cmd_len, ack_msg, cmd_result
                 print("cmd_result:", cmd_result)
-                print(type(cmd_result))
+                # print(type(cmd_result))
                 conn.send(ack_msg)
                 conn.recv(10)
                 conn.send(cmd_result)
-                # conn.send(bytes(result, 'utf8'))
-                print("OK")
-            else:
-                print("cmd is not fount")
+            else:   # 调用其他命令pwd之类的
+                print("test is ok")
+                print("recv cmd:", str(client_data, 'utf8'))
+                cmd = str(client_data, 'utf8').strip()
+                cmd_call = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
+                cmd_result = cmd_call.stdout.read()
+                if len(cmd_result) == 0:
+                    cmd_result = b'commond is not found'
+                cmd_len = len(cmd_result)
+                ack_msg = bytes("CMD_RESULT_SIZE|%s" %len(cmd_result), 'utf8')
+                conn.send(ack_msg)
+                conn.recv(10)
+                conn.send(cmd_result)
+            # print("cmd is not fount")
 
