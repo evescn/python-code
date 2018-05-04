@@ -20,6 +20,11 @@ def func2():
     gevent.sleep(1)
     print('\033[32;1m李闯搞完了海涛，回来继续跟海龙搞...\033[0m')
 
+def func3():
+    print('\033[32;1m李闯切换到了跟海龙搞...\033[0m')
+    gevent.sleep(1)
+    print('\033[32;1m李闯搞完了海涛，回来继续跟海龙搞...\033[0m')
+
 
 gevent.joinall([
     gevent.spawn(func1),
