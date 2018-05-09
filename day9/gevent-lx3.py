@@ -1,12 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 2018/5/3 22:52
+# @Time    : 2018/5/9 11:56
 # @Author  : Evescn
 # @Site    : 
-# @File    : gevent.py
+# @File    : gevent-lx3.py
 # @Software: PyCharm
 
 import gevent
+import socket
 
 
 def func1():
@@ -29,5 +30,4 @@ def func3():
 gevent.joinall([
     gevent.spawn(func1),
     gevent.spawn(func2),
-    # gevent.spawn(func3),
 ])

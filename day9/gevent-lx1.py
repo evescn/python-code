@@ -25,6 +25,7 @@ def asynchronous():
     threads = [gevent.spawn(task, i) for i in range(10)]
     gevent.joinall(threads)
 
+
 print('Synchronous:')
 synchronous()
 
