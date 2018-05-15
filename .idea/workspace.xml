@@ -4,35 +4,8 @@
     <bookmark url="file://$PROJECT_DIR$/day2/shopping-cart/shopping-cart.py" line="301" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0904ffa5-429a-44f2-926b-71fff84b8119" name="Default" comment="v0.201805091">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/day5/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/day5/dj/direct/test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/day5/zy/evescn/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/day5/zy/evescn/conf/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/day5/zy/evescn/main.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/day5/zy/evescn/modules/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/day5/zy/yq.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/day8/zy/author/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/day8/zy/author/conf/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/day8/zy/author/conf/settings.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/day8/zy/author/dbhelper/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/day8/zy/author/dbhelper/dbapi.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/day8/zy/author/dbstore/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/day8/zy/author/dbstore/groups.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/day8/zy/author/dbstore/hosts.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/day8/zy/author/dbstore/init_db.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/day8/zy/author/dbstore/users.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/day8/zy/author/logs/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/day8/zy/author/modules/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/day8/zy/author/modules/commands.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/day8/zy/author/sshkey/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/day8/zy/evescn/__init__.py" />
+    <list default="true" id="0904ffa5-429a-44f2-926b-71fff84b8119" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/day5/dj/backend/db/sql_api.py" afterPath="$PROJECT_DIR$/day5/dj/backend/db/sql_api.py" />
-      <change beforePath="$PROJECT_DIR$/day5/dj/backend/logic/handle.py" afterPath="$PROJECT_DIR$/day5/dj/backend/logic/handle.py" />
-      <change beforePath="$PROJECT_DIR$/day5/dj/user_main.py" afterPath="$PROJECT_DIR$/day5/dj/user_main.py" />
-      <change beforePath="$PROJECT_DIR$/day5/zy/yq" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -693,7 +666,14 @@
       <option name="project" value="LOCAL" />
       <updated>1525856229827</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="v0.20180515">
+      <created>1526371864564</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1526371864564</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -736,7 +716,8 @@
     <MESSAGE value="v0.20180507" />
     <MESSAGE value="v0.20180509" />
     <MESSAGE value="v0.201805091" />
-    <option name="LAST_COMMIT_MESSAGE" value="v0.201805091" />
+    <MESSAGE value="v0.20180515" />
+    <option name="LAST_COMMIT_MESSAGE" value="v0.20180515" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
