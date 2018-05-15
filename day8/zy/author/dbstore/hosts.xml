@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<HOSTS>
+    <GROUP GID="G04">
+        <HOST>
+            <HIP>172.20.3.204</HIP>
+            <HNAME>agent</HNAME>
+            <HUSER>root</HUSER>
+            <AUTH_TYPE>1</AUTH_TYPE>
+            <HKEY>evescn</HKEY>
+            <PORT>22</PORT>
+        </HOST>
+    </GROUP>
+    <GROUP GID="G03">
+        <HOST>
+            <HIP>172.20.3.203</HIP>
+            <HNAME>ubuntu</HNAME>
+            <HUSER>root</HUSER>
+            <AUTH_TYPE>1</AUTH_TYPE>
+            <HKEY>evescn</HKEY>
+            <PORT>22</PORT>
+        </HOST>
+    </GROUP>
+    <GROUP GID="G02">
+        <HOST>
+            <HIP>172.20.3.202</HIP>
+            <HNAME>agent</HNAME>
+            <HUSER>root</HUSER>
+            <AUTH_TYPE>2</AUTH_TYPE>
+            <HKEY>evescn</HKEY>
+            <PORT>22</PORT>
+        </HOST>
+    </GROUP>
+    <GROUP GID="G01">
+        <HOST>
+            <HIP>172.20.3.201</HIP>
+            <HNAME>agent</HNAME>
+            <HUSER>root</HUSER>
+            <AUTH_TYPE>1</AUTH_TYPE>
+            <HKEY>evescn</HKEY>
+            <PORT>22</PORT>
+        </HOST>
+        <HOST>
+            <HIP>172.20.3.203</HIP>
+            <HNAME>ubuntu</HNAME>
+            <HUSER>root</HUSER>
+            <AUTH_TYPE>1</AUTH_TYPE>
+            <HKEY>evescn</HKEY>
+            <PORT>22</PORT>
+        </HOST>
+    </GROUP>
+</HOSTS>

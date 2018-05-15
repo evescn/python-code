@@ -8,13 +8,24 @@
 @file: handle.py
 @time: 2017/10/11 22:45
 """
+#
+# import sys
+# import os
+# base_dir = os.path.abspath(__file__)
+# for i in range(2):
+#     base_dir = os.path.dirname(base_dir)
+#
+# sys.path.append(base_dir)
+# print(base_dir)
 
-from backend.db.sql_api import select
+# from db.sql_api import select
+from backend.db import sql_api as sq
+# from db import sql_api as sq
 
 
 def home():
     print("welcome to home page")
-    user_data = select("user", "12")
+    user_data = sq.select("user", "12")
     print(user_data)
 
 
@@ -26,3 +37,4 @@ def tv():
     print("welcome to tv page")
 
 
+home()

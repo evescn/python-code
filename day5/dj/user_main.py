@@ -12,4 +12,6 @@
 # import sys
 # print(sys.path)
 from backend.logic import handle
+# handle.home()
 handle.home()
+print()
