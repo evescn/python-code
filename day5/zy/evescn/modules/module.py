@@ -19,19 +19,12 @@ for i in range(2):
 sys.path.append(base_dir)
 # print(base_dir)
 
- data
-
-def test():
-    print("test page")
-    return 0
-
-test()
 
 def login():
     # 验证用户帐号和密码函数
     global name
-    lock = "lock.txt"
-    loginfile = "password.txt"
+    lock = "data/lock.txt"
+    passwd_file = "data/password.txt"
     login_info = 0
     i = 0
 
@@ -42,17 +35,20 @@ def login():
                 # if name in line:
                 if name == line.strip():
                     sys.exit('\033[32:1m用户 %s 已经被锁定\033[0m' % name)
+
         password = input("Please input password: ")
-        with open(loginfile, "r") as f:
-            for line in f:
-                user_file, pass_file = line.split()
-                if user_file == name and pass_file == password:
-                    print("Bingo!")
-                    login_info = 1
-                    return name
-            else:
-                print("You name or password is error!")
-                i += 1
+        with open(passwd_file, "r") as f:
+            s = f
+            print(s)
+            # for line in f:
+            #     user_file, pass_file = line.split()
+            #     if user_file == name and pass_file == password:
+            #         print("Bingo!")
+            #         login_info = 1
+            #         return name
+            # else:
+            #     print("You name or password is error!")
+            #     i += 1
     else:
         if i == 3 and login_info == 0:
             f = open(lock, "a")
@@ -60,14 +56,11 @@ def login():
             f.close()
             print('\033[32:1m用户 %s 已经被锁定\033[0m' % name)
 
-
-
-
-
+login()
 
 def show_goods():
     # 显示当前商店内的所有商品
-    commodity = "commodity.txt"
+    commodity = "data/commodity.txt"
     x = PrettyTable(["商品名称", "价格", "数量"])
     x.align["商品名称"] = "l"  # 以name字段左对齐
     x.align["价格"] = "r"  # 以name字段右对齐
@@ -92,7 +85,7 @@ def show_bought_goods():
 
 def show_yue(username):
     # 显示帐号的金额
-    money = "money.txt"
+    money = "data/money.txt"
     x = PrettyTable(["用户", "余额"])
     x.align["用户"] = "l"  # 以name字段左对齐
     x.align["余额"] = "r"  # 以name字段右对齐
@@ -132,8 +125,8 @@ def recharge(username):
 def add_goods_shopping_cart(key):
     # 添加商品到购物车函数
     n = input("请输入购买数量：")
-    file1 = "commodity.txt"
-    file2 = "shop-cart.txt"
+    file1 = "data/commodity.txt"
+    file2 = "data/shop-cart.txt"
     ret = edit_file_data(file1, key, n, '-')
     if int(ret) == 1:
         print("*****************************")
@@ -153,9 +146,9 @@ def goods_bought(username):
         # else:
         key = input("请输入购买商品名称：")
         n = input("请输入购买数量：")
-        file1 = "money.txt"
-        file2 = "shop-cart.txt"
-        file3 = "bought.txt"
+        file1 = "data/money.txt"
+        file2 = "data/shop-cart.txt"
+        file3 = "data/bought.txt"
         with open("commodity.txt", "r", encoding='utf-8') as f1:
             for line in f1:
                 shop = line.split()
@@ -219,7 +212,7 @@ def open_shop_cart():
     # x.align["价格"] = "r"  # 以name字段右对齐
     x.align["数量"] = "r"  # 以name字段右对齐
     x.padding_width = 1  # 填充宽度
-    with open("shop-cart.txt", "r", encoding='utf-8') as f:
+    with open("data/shop-cart.txt", "r", encoding='utf-8') as f:
         for line in f:
             name, number = line.split()
             x.add_row([name, number])
