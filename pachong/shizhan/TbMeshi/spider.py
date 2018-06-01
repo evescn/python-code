@@ -13,11 +13,21 @@ from selenium.webdriver.support import expected_conditions as EC
 import re
 import time
 from pyquery import PyQuery as pq
+import pymongo
+from config import *
 
-browser = webdriver.Chrome()
+
+# browser = webdriver.Chrome()
+browser = webdriver.PhantomJS(service_args=SERVICE_ARGS)
 wait = WebDriverWait(browser, 10)
 
+browser.set_window_size(1400, 900)
+
+client = pymongo.MongoClient(MONGO_URL)
+db = client[MONGO_DB]
+
 def search():
+    print('开始检索')
     try:
         browser.get('https://www.taobao.com')
         input = wait.until(
@@ -37,6 +47,7 @@ def search():
 
 
 def next_page(page_number):
+    print('到%s页了' % page_number)
     try:
         input = wait.until(
             EC.presence_of_element_located((By.CSS_SELECTOR, '#mainsrp-pager > div > div > div > div.form > input'))
@@ -47,8 +58,9 @@ def next_page(page_number):
         input.clear()
         input.send_keys(page_number)
         submit.click()
-        print(page_number)
+        # print(page_number)
         wait.until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, '#mainsrp-pager > div > div > div > ul > li.item.active > span'), str(page_number)))
+        get_products()
     except TimeoutError:
         return next_page(page_number)
 
@@ -60,8 +72,27 @@ def get_products():
     html = browser.page_source
     doc = pq(html)
     items = doc('#mainsrp-itemlist .items .item').items()
+    # print(items)
     for item in items:
-        print(item)
+        # print(item)
+        product = {
+            'image': item.find('.pic .img').attr('data-src')[2:],
+            'price': item.find('.price').text(),
+            'deal': item.find('.deal-cnt').text()[:-3],
+            'title': item.find('.title').text(),
+            'shop': item.find('.shop').text(),
+            'location': item.find('.location').text(),
+        }
+        # print(product)
+        sava_to_mongo(product)
+
+
+def sava_to_mongo(result):
+    try:
+        if db[MONGB_TABLE].insert(result):
+            print("插入mongodb成功", result)
+    except Exception:
+        print("出错了")
 
 
 def main():
