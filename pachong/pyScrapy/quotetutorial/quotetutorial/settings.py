@@ -15,6 +15,9 @@ SPIDER_MODULES = ['quotetutorial.spiders']
 NEWSPIDER_MODULE = 'quotetutorial.spiders'
 
 
+MONGO_URL='localhost'
+MONGO_DB='quotestutorial'
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'quotetutorial (+http://www.yourdomain.com)'
 
@@ -64,9 +67,10 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'quotetutorial.pipelines.QuotetutorialPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   # 'quotetutorial.pipelines.TextPipeline': 300,
+   'quotetutorial.pipelines.MongoPipeline': 400,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html

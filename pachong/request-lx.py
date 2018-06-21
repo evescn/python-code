@@ -165,15 +165,20 @@ headers = {
     'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'
 }
 
+# proxies = {
+#     'http': 'socks5://127.0.0.1:1080',
+#     'https': 'socks5://127.0.0.1:1080'
+# }
+
 proxies = {
-    'http': 'socks5://127.0.0.1:1080',
-    'https': 'socks5://127.0.0.1:1080'
+    'http': 'http://127.0.0.1:1080',
+    'https': 'https://127.0.0.1:1080'
 }
 
 response = requests.get('http://httpbin.org/get', proxies=proxies)
 print(response.status_code)
 print(response.text)
 
-response = requests.get('https://www.google.com', headers=headers, proxies=proxies)
-print(response.status_code)
-print(response.text)
+# response = requests.get('https://www.google.com', headers=headers, proxies=proxies)
+# print(response.status_code)
+# print(response.text)
