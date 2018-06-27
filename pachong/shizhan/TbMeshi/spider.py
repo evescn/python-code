@@ -83,7 +83,7 @@ def get_products():
             'shop': item.find('.shop').text(),
             'location': item.find('.location').text(),
         }
-        # print(product)
+        print(product)
         sava_to_mongo(product)
 
 
