@@ -9,8 +9,8 @@
 import requests
 import re
 
-content = requests.get("https://book.douban.com").text
-print(content)
+# content = requests.get("https://book.douban.com").text
+# print(content)
 
 # pattern = re.compile(
 #     '<li.*?cover.*?href="(.*?)".*?title="(.*?)".*?more-meta.*?"author">(.*?)</span>.*?"year">(.*?)</span>.*?</li>',
@@ -30,6 +30,7 @@ print(content)
 
 
 content = requests.get('https://book.douban.com/').text
+print(type(content))
 pattern = re.compile('<li.*?cover.*?href="(.*?)".*?title="(.*?)".*?more-meta.*?author">(.*?)</span>.*?year">(.*?)</span>.*?</li>', re.S)
 results = re.findall(pattern, content)
 
